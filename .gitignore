@@ -1,0 +1,20 @@
+# data files - too large for git
+*.jsonl
+*.parquet
+*.npy
+*.gz
+
+# python
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+
+# node
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
