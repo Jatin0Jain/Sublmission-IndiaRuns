@@ -1,0 +1,46 @@
+# Redrob Hackathon — Submission Metadata Template
+
+team_name: "Antigravity"  
+
+primary_contact:
+  name: "User"
+  email: "user@example.com"
+  phone: "+91-0000000000"        
+
+team_members:
+  - name: "User"
+    email: "user@example.com"
+    role: "Lead"
+
+github_repo: "https://github.com/Antigravity/redrob-candidate-ranking"
+
+sandbox_link: "https://huggingface.co/spaces/Antigravity/redrob-ranker"
+
+reproduce_command: "python generate_submission.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Cloud VM"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.10"
+  os: "Ubuntu 22.04 LTS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 15
+
+ai_tools_used:
+  - "Gemini"
+
+ai_usage_summary: |
+  Used Antigravity (powered by Gemini) to analyze the competition requirements, extract data from docx files, build a React frontend with a FastAPI backend, and subsequently pivot to a fully offline vector-search Python script for the hackathon submission.
+
+methodology_summary: |
+  Two-stage offline pipeline. Stage 1 (Pre-computation) uses pandas to parse and flatten candidates.jsonl, extracting key behavioral signals and flagging honeypots. It then encodes all profiles using `all-MiniLM-L6-v2` into a FAISS-compatible numpy array, and uses the Gemini API offline to generate highly specific, non-templated reasoning strings for the top 500 candidates. Stage 2 (Ranking) loads the precomputed embeddings and parquet files, calculates cosine similarity against the job description, filters out honeypots, and computes a composite score (70% semantic match + 30% behavioral signals like notice period and activity). It then attaches the pre-computed LLM reasonings. Total ranking runtime is under 15 seconds.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
