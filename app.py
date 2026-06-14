@@ -216,17 +216,19 @@ def score_candidate_full(full_json):
 import rank
 import gzip
 
-def run_ranker():
+def run_ranker(progress=gr.Progress()):
     data_dir = "."
     jsonl_path = os.path.join(data_dir, "candidates.jsonl")
     
     if not os.path.exists(jsonl_path):
         return "⚠️ Could not find the 100k dataset at " + jsonl_path, ""
 
+    progress(0.1, desc="Phase 1: Filtering 100,000 candidates...")
     # Phase 1: Fast Filter (Top 2000)
     top_2000 = rank.phase_1_filter(data_dir)
     top_ids = set(top_2000['candidate_id'].tolist())
 
+    progress(0.4, desc="Phase 2: Deep scoring top 2,000 JSON records...")
     # Phase 2: Stream JSONL
     full_records = {}
     with open(jsonl_path, 'r', encoding='utf-8') as f:
@@ -238,6 +240,7 @@ def run_ranker():
             if len(full_records) == len(top_ids):
                 break
                 
+    progress(0.8, desc="Calculating final rankings...")
     scored_candidates = []
     for cid, record in full_records.items():
         score = score_candidate_full(record)
