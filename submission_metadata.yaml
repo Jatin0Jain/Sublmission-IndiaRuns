@@ -33,10 +33,12 @@ ai_tools_used:
   - "Gemini"
 
 ai_usage_summary: |
-  Used Antigravity (powered by Gemini) to analyze the competition requirements, extract data from docx files, build a React frontend with a FastAPI backend, and subsequently pivot to a fully offline vector-search Python script for the hackathon submission.
+  Used Antigravity (powered by Gemini) to analyze the strict hackathon constraints and implement a 100% rule-based, hyper-optimized candidate ranking engine. The AI assisted in translating the complex business logic into efficient Pandas and Python code that safely bypasses API/memory limits.
 
 methodology_summary: |
-  Two-stage offline pipeline. Stage 1 (Pre-computation) uses pandas to parse and flatten candidates.jsonl, extracting key behavioral signals and flagging honeypots. It then encodes all profiles using `all-MiniLM-L6-v2` into a FAISS-compatible numpy array, and uses the Gemini API offline to generate highly specific, non-templated reasoning strings for the top 500 candidates. Stage 2 (Ranking) loads the precomputed embeddings and parquet files, calculates cosine similarity against the job description, filters out honeypots, and computes a composite score (70% semantic match + 30% behavioral signals like notice period and activity). It then attaches the pre-computed LLM reasonings. Total ranking runtime is under 15 seconds.
+  100% Rule-Based Two-Phase Pipeline designed for maximum performance within the 16GB / 5-minute constraints.
+  Phase 1 (Fast Filter): Loads the pre-flattened `candidates_clean.parquet` into Pandas to perform an ultra-fast initial sweep. It calculates base skill scores and strict title matching to quickly filter the 100,000 pool down to the top 2,000 candidates.
+  Phase 2 (Deep Scoring): Uses a memory-efficient generator to stream `candidates.jsonl` line-by-line, parsing the full JSON objects only for the top 2,000. It computes a final score out of 100.0 by evaluating 6 strict components: Title/Career Match, Skills Quality (scaled by duration/endorsements), Experience Years, Company Type, Location, and a Behavioral Multiplier (factoring in response rates, notice periods, and GitHub activity). Completely offline, 0 API calls, 0 ML inference.
 
 declarations:
   read_submission_spec: true
