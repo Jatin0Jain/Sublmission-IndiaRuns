@@ -125,6 +125,8 @@ def run_ranker():
         return "⚠️ sample_candidates.json not found in repo.", ""
 
     candidates = [flatten(r) for r in RAW_CANDIDATES]
+    # Hard filter: exclude candidates not open to work
+    candidates = [c for c in candidates if c["open_to_work"]]
 
     # Embed
     texts = [

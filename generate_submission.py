@@ -192,8 +192,8 @@ def main():
     # Filter honeypots
     df = df[df["is_honeypot"] == 0].copy()
 
-    # Hard filter: not open to work gets heavy penalty already in behavioral score
-    # We keep them in but their score will be depressed
+    # Hard filter: remove candidates not open to work
+    df = df[df["open_to_work_flag"] == True].copy()
 
     # JD skill match bonus
     df["skill_match_score"] = df["skills"].apply(calculate_jd_skill_match)
