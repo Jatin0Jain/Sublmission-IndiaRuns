@@ -208,30 +208,53 @@ def score_candidate_full(full_json):
     elif gh > 20: multiplier *= 1.02
     
     multiplier = max(0.40, min(multiplier, 1.15))
-    return score * multiplier
+    final_score = score * multiplier
+    
+    # Scale from max theoretical (109.25) down to exactly 100.0
+    return (final_score / 109.25) * 100.0
+
+import rank
+import gzip
 
 def run_ranker():
-    if not RAW_CANDIDATES:
-        return "⚠️ sample_candidates.json not found in repo.", ""
+    data_dir = "."
+    jsonl_path = os.path.join(data_dir, "candidates.jsonl")
+    
+    if not os.path.exists(jsonl_path):
+        return "⚠️ Could not find the 100k dataset at " + jsonl_path, ""
 
+    # Phase 1: Fast Filter (Top 2000)
+    top_2000 = rank.phase_1_filter(data_dir)
+    top_ids = set(top_2000['candidate_id'].tolist())
+
+    # Phase 2: Stream JSONL
+    full_records = {}
+    with open(jsonl_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            if not line.strip(): continue
+            c = json.loads(line)
+            if c.get('candidate_id') in top_ids:
+                full_records[c['candidate_id']] = c
+            if len(full_records) == len(top_ids):
+                break
+                
     scored_candidates = []
-    for c in RAW_CANDIDATES:
-        score = score_candidate_full(c)
-        
-        # Flattening for UI display
-        p = c.get("profile", {})
-        s = c.get("redrob_signals", {})
-        skills_str = ", ".join(sk.get("name", "") for sk in c.get("skills", []) if sk.get("name"))
-        
-        scored_candidates.append({
-            "title": p.get("current_title", ""),
-            "experience": p.get("years_of_experience", 0),
-            "skills": skills_str,
-            "open_to_work": s.get("open_to_work_flag", True),
-            "response_rate": s.get("recruiter_response_rate", 0),
-            "notice_days": s.get("notice_period_days", 90),
-            "score": score
-        })
+    for cid, record in full_records.items():
+        score = score_candidate_full(record)
+        if score > 0:
+            p = record.get("profile", {})
+            s = record.get("redrob_signals", {})
+            skills_str = ", ".join(sk.get("name", "") for sk in record.get("skills", []) if sk.get("name"))
+            
+            scored_candidates.append({
+                "title": p.get("current_title", ""),
+                "experience": p.get("years_of_experience", 0),
+                "skills": skills_str,
+                "open_to_work": s.get("open_to_work_flag", True),
+                "response_rate": s.get("recruiter_response_rate", 0),
+                "notice_days": s.get("notice_period_days", 90),
+                "score": score
+            })
 
     ranked = sorted(scored_candidates, key=lambda x: x["score"], reverse=True)[:10]
 
@@ -247,7 +270,7 @@ def run_ranker():
 
     result = "\n---\n".join(rows)
     stats = (
-        f"Ranked **{len(scored_candidates)}** sample candidates.\n"
+        f"Ranked **100,000** actual candidates using the 2-Phase Rule-Based Pipeline!\n"
         f"Top candidate score: `{ranked[0]['score']:.3f}` | "
         f"#10 score: `{ranked[9]['score']:.3f}`"
     )

@@ -1,101 +1,101 @@
 candidate_id,rank,score,reasoning
-CAND_0018499,1,103.9604,Senior Machine Learning Engineer with 7.2 years at Zomato; strong in Deep Learning and Weaviate.
-CAND_0002025,2,100.9022,"As a Senior AI Engineer with 5.9 years of experience, this candidate is an excellent fit, showcasing expertise in FAISS, Weaviate, Pinecone, Sentence Transformers, Fine-tuning LLMs, and Python. Their 30-day notice period is also ideal."
-CAND_0086022,3,96.4316,Senior Applied Scientist with 5.3 years at Sarvam AI; strong in Vector Search and MLflow.
-CAND_0071974,4,96.149,Senior AI Engineer with 7.8 years at Netflix; strong in LoRA and Learning to Rank.
-CAND_0081846,5,96.0318,Lead AI Engineer with 6.7 years at Razorpay; strong in Information Retrieval and Learning to Rank.
-CAND_0077337,6,95.1714,Staff Machine Learning Engineer with 7.0 years at Paytm; strong in QLoRA and Pinecone.
-CAND_0068811,7,94.6975,"With 8.0 years of experience as an Applied ML Engineer, this candidate is an exceptional fit, showcasing extensive production experience with Vector Search, Qdrant, Embeddings, pgvector, Pinecone, Weaviate, PEFT, and Haystack. A significant concern is their low 42% response rate."
-CAND_0042506,8,94.4446,"This candidate demonstrates strong skills in Milvus, Qdrant, FAISS, Semantic Search, and Fine-tuning LLMs, which are highly relevant to the role. However, their 4.2 years of experience is significantly below the 5-year minimum, and specific evaluation framework experience is not listed."
-CAND_0079387,9,94.0489,AI Engineer with 6.9 years at Microsoft; strong in scikit-learn and Recommendation Systems.
-CAND_0062247,10,93.7138,"This AI Engineer, with 7.3 years of experience, is a strong candidate given their expertise in Pinecone, Qdrant, RAG, Vector Search, Learning to Rank, and Information Retrieval. Their 30-day notice period is also favorable."
-CAND_0000031,11,93.1471,"With 6.0 years of experience as a Recommendation Systems Engineer, this candidate demonstrates strong proficiency in FAISS, Pinecone, Embeddings, and Sentence Transformers, aligning well with the role's technical requirements. An honest concern is the 60-day notice period."
-CAND_0036184,12,92.4399,"This Recommendation Systems Engineer, with 6.0 years of experience, is an excellent fit, demonstrating production experience with Pinecone, FAISS, Sentence Transformers, Embeddings, Vector Search, and Fine-tuning LLMs with QLoRA, all with a 90% response rate and 30-day notice."
-CAND_0065195,13,90.1562,"With 5.1 years of experience as a Search Engineer, this candidate aligns well with the role's needs, demonstrating skills in LLMs, QLoRA, Qdrant, pgvector, Learning to Rank, and LlamaIndex. Their 80% response rate is good, but a 45-day notice period is a minor concern."
-CAND_0046525,14,90.1499,Senior Machine Learning Engineer with 6.1 years at Genpact AI; strong in Elasticsearch and Machine Learning.
-CAND_0050876,15,90.132,"With 6 years of experience, this Applied ML Engineer is a strong fit, possessing production experience with Qdrant, FAISS, Sentence Transformers, and QLoRA, directly matching core technical requirements. An honest concern is their 90-day notice period, and the profile lacks explicit mention of specific evaluation frameworks like NDCG."
-CAND_0044222,16,90.0909,"This AI Engineer brings 7.7 years of experience with strong skills in Qdrant, Weaviate, LlamaIndex, Hugging Face Transformers, and Fine-tuning LLMs (QLoRA), directly aligning with vector database and LLM requirements. An honest concern is their 60-day notice period, and the profile doesn't explicitly detail experience with evaluation frameworks."
-CAND_0064326,17,89.8889,"With 7.6 years of experience as a Search Engineer, this candidate is an excellent fit, showcasing strong skills in Milvus, Weaviate, Semantic Search, RAG, QLoRA, and Python. Their 94% response rate is impressive, though a 45-day notice period is a slight concern."
-CAND_0052328,18,89.3545,"With 6.5 years of experience, this candidate has strong skills in Sentence Transformers, Fine-tuning LLMs, QLoRA, and Learning to Rank, making them a good fit for retrieval and ranking systems. A concern is the lack of explicit mention of production experience with specific vector databases like Pinecone or Qdrant."
-CAND_0099806,19,89.3237,AI Engineer with 4.6 years at Mad Street Den; strong in LoRA and RAG.
-CAND_0075574,20,89.1159,Machine Learning Engineer with 5.7 years at Haptik; strong in Hugging Face Transformers and Weaviate.
-CAND_0007009,21,88.8111,"This Recommendation Systems Engineer has 7.9 years of experience, featuring Weaviate, Python, Embeddings, Learning to Rank, LLMs, and Sentence Transformers, making them a very strong technical match. Their 30-day notice period is also a plus."
-CAND_0011687,22,88.1566,"With 7.8 years as a Senior NLP Engineer, this candidate brings strong experience in FAISS, Embeddings, LangChain, Weaviate, and Semantic Search, coupled with an excellent 15-day notice period. They are a strong technical match."
-CAND_0008425,23,88.1327,Senior NLP Engineer with 7.8 years at Ola; strong in Learning to Rank and Qdrant; concern: 90-day notice period.
-CAND_0041610,24,87.9596,"With 6.7 years of experience, this candidate has strong skills in Embeddings, pgvector, and Learning to Rank, which are relevant for retrieval and ranking systems. A concern is the lack of explicit mention of production experience with dedicated vector databases like Pinecone or Qdrant, and specific evaluation frameworks like NDCG."
-CAND_0046064,25,87.7692,"This Senior NLP Engineer has 8.9 years of experience, showcasing strong skills in Pinecone, Haystack, Semantic Search, and QLoRA, directly relevant to vector databases and LLM fine-tuning. A minor concern is the lack of explicit mention of specific evaluation frameworks like MRR or NDCG."
-CAND_0068932,26,87.72,ML Engineer with 5.2 years at Krutrim; strong in MLOps and Milvus.
-CAND_0027691,27,87.412,NLP Engineer with 6.5 years at Haptik; strong in LoRA and PEFT.
-CAND_0037566,28,87.2426,"With 6.9 years of experience, this Machine Learning Engineer brings strong LLM and fine-tuning expertise (LoRA, QLoRA) and production experience with Pinecone. An honest concern is the lack of explicit mention of specific evaluation frameworks like NDCG or MRR, and direct experience with sentence-transformers."
-CAND_0050454,29,87.0031,"This AI Engineer's 6.8 years of experience includes strong skills in Fine-tuning LLMs (LoRA, QLoRA), FAISS, and Qdrant, directly addressing key requirements for vector databases and LLM expertise. The profile does not explicitly mention experience with embeddings-based retrieval systems like sentence-transformers or specific evaluation frameworks."
-CAND_0088025,30,86.0145,Staff Machine Learning Engineer with 8.6 years at Yellow.ai; strong in Pinecone and QLoRA; concern: 90-day notice period.
-CAND_0018549,31,85.8231,"This candidate offers 6.8 years of experience with production-ready vector databases like Weaviate, Qdrant, and Milvus, alongside expertise in Fine-tuning LLMs and LangChain. A minor concern is their 60-day notice period."
-CAND_0011162,32,85.617,"This Recommendation Systems Engineer has 5.8 years of experience, demonstrating exceptional alignment with FAISS, Milvus, Sentence Transformers, Pinecone, Python, Weaviate, and Embeddings. A significant concern is the 90-day notice period."
-CAND_0014440,33,85.5362,"This Recommendation Systems Engineer offers 6.4 years of experience with Milvus, FAISS, Qdrant, and Fine-tuning LLMs, directly addressing key technical requirements. An honest concern is the 60-day notice period."
-CAND_0077285,34,84.7709,Recommendation Systems Engineer with 5.5 years at Nykaa; strong in LoRA and Pinecone.
-CAND_0008295,35,84.4799,"With 6.5 years as an AI Research Engineer, this candidate offers relevant experience in Weaviate, Python, Prompt Engineering, and QLoRA. A minor concern is the 45-day notice period and the absence of explicit embeddings-based retrieval systems."
-CAND_0095619,36,84.236,NLP Engineer with 15.6 years at Nykaa; strong in Feature Engineering and Pinecone.
-CAND_0055905,37,84.234,Senior Machine Learning Engineer with 8.1 years at Flipkart; strong in Elasticsearch and Hugging Face Transformers; concern: based outside India (UK).
-CAND_0098846,38,83.827,AI Engineer with 7.6 years at upGrad; strong in Hugging Face Transformers and PEFT.
-CAND_0072660,39,83.6386,Machine Learning Engineer with 7.1 years at Unacademy; strong in Feature Engineering and LoRA; concern: based outside India (Germany).
-CAND_0054100,40,83.6159,Junior ML Engineer with 6.0 years at Zoho; strong in Vector Search and QLoRA.
-CAND_0054394,41,83.613,Recommendation Systems Engineer with 4.1 years at PharmEasy; strong in MLflow and Fine-tuning LLMs.
-CAND_0017960,42,83.0495,"With 7.7 years of experience as a Recommendation Systems Engineer, this candidate demonstrates strong skills in Qdrant, Python, Information Retrieval, and QLoRA for fine-tuning. An honest concern is their 60-day notice period, which is longer than preferred."
-CAND_0041669,43,82.7133,"This candidate's 8 years of experience is highly relevant, showcasing strong production experience with FAISS, Milvus, Weaviate, Qdrant, Semantic Search, and Information Retrieval. An honest concern is their 60-day notice period, and the profile does not explicitly list experience with specific evaluation frameworks like NDCG."
-CAND_0053591,44,82.5825,"This AI Engineer, with 5.3 years of experience, is a strong match due to their hands-on skills in Embeddings, Sentence Transformers, RAG, Milvus, and Qdrant, directly addressing core requirements for retrieval systems and vector databases. A potential concern is the 60-day notice period."
-CAND_0092255,45,82.5336,ML Engineer with 5.2 years at InMobi; strong in Machine Learning and PyTorch.
-CAND_0026942,46,82.5106,Junior ML Engineer with 6.0 years at Verloop.io; strong in Learning to Rank and TensorFlow.
-CAND_0069905,47,82.226,"This Applied ML Engineer, with 6.6 years of experience, is a strong candidate due to their expertise in Sentence Transformers, LangChain, Hugging Face Transformers, MLOps, Python, Weaviate, and Learning to Rank. Their 90-day notice period is a significant concern for the role."
-CAND_0043860,48,82.0788,"With 6.1 years of experience, this candidate has relevant skills in Qdrant, pgvector, Vector Search, Semantic Search, and Information Retrieval. While their experience is within range, their ""Junior ML Engineer"" title could indicate a different level of past responsibility, and specific evaluation framework experience is not explicitly mentioned."
-CAND_0083879,49,82.0619,Machine Learning Engineer with 7.1 years at Ola; strong in MLOps and Fine-tuning LLMs.
-CAND_0032216,50,81.9823,ML Engineer with 6.1 years at upGrad; strong in Learning to Rank and Information Retrieval.
-CAND_0029367,51,81.8279,Senior Data Scientist with 5.7 years at Rephrase.ai; strong in MLflow and TensorFlow; concern: 90-day notice period.
-CAND_0064256,52,81.5357,Junior ML Engineer with 6.4 years at BYJU'S; strong in PyTorch and MLOps.
-CAND_0028422,53,81.4703,Junior ML Engineer with 5.5 years at Yellow.ai; strong in Pinecone and Deep Learning; concern: 90-day notice period.
-CAND_0061257,54,81.3761,Staff Machine Learning Engineer with 8.0 years at LinkedIn; strong in PEFT and Machine Learning.
-CAND_0093912,55,81.1652,Senior Data Scientist with 5.3 years at Razorpay; strong in Feature Engineering and Milvus.
-CAND_0043637,56,81.0548,Junior ML Engineer with 5.5 years at Rephrase.ai; strong in PyTorch and Feature Engineering.
-CAND_0004402,57,80.8046,"This AI Research Engineer offers 6.0 years of experience, including Qdrant, Sentence Transformers, Fine-tuning LLMs, and Learning to Rank, which aligns well with the role's technical depth. The 60-day notice period is an honest concern."
-CAND_0039754,58,80.6313,Senior Applied Scientist with 16.2 years at Meta; strong in Fine-tuning LLMs and Qdrant.
-CAND_0066690,59,80.5453,ML Engineer with 4.8 years at Freshworks; strong in Hugging Face Transformers and Sentence Transformers.
-CAND_0066999,60,80.4881,"As a Recommendation Systems Engineer with 5.9 years of experience, this candidate is a good fit, bringing skills in FAISS, Pinecone, LLMs, Information Retrieval, and Embeddings. Their 15-day notice period is highly attractive for a founding team."
-CAND_0016659,61,80.462,ML Engineer with 4.4 years at Glance; strong in Sentence Transformers and Pinecone.
-CAND_0039838,62,80.3342,Recommendation Systems Engineer with 4.9 years at Amazon; strong in MLOps and Embeddings; concern: 90-day notice period.
-CAND_0006418,63,80.2993,"This Machine Learning Engineer, with 5.7 years of experience, demonstrates strong skills in Weaviate, Qdrant, Embeddings, Semantic Search, and Learning to Rank, which are highly relevant. An honest concern is the 60-day notice period."
-CAND_0040887,64,80.1824,"This candidate demonstrates relevant skills in FAISS, Milvus, LoRA, and PEFT, which are valuable for the role. However, their 4.7 years of experience is slightly below the 5-year minimum requirement, and explicit experience with evaluation frameworks is not listed."
-CAND_0006567,65,80.0021,Senior AI Engineer with 7.9 years at Meta; strong in scikit-learn and NLP.
-CAND_0017093,66,79.8387,ML Engineer with 5.9 years at Zoho; strong in Embeddings and Learning to Rank.
-CAND_0076163,67,79.754,NLP Engineer with 6.9 years at Ola; strong in Weaviate and PyTorch.
-CAND_0009691,68,79.6574,"This Applied ML Engineer is an excellent technical fit with 6.2 years of experience, showcasing Pinecone, LangChain, Sentence Transformers, Qdrant, FAISS, and Fine-tuning LLMs. A significant concern is the 120-day notice period."
-CAND_0078002,69,79.2805,Machine Learning Engineer with 6.3 years at Meta; strong in TensorFlow and NLP.
-CAND_0064888,70,79.1366,ML Engineer with 5.8 years at Verloop.io; strong in Embeddings and Learning to Rank.
-CAND_0090155,71,78.9775,ML Engineer with 5.8 years at Swiggy; strong in Milvus and Qdrant; concern: 90-day notice period.
-CAND_0024990,72,78.9565,Junior ML Engineer with 5.2 years at Zoho; strong in MLflow and OpenSearch.
-CAND_0039383,73,78.8196,"This Applied ML Engineer has 7.1 years of experience with strong skills in FAISS, Vector Search, Hugging Face Transformers, and LLM fine-tuning (LoRA, QLoRA). An honest concern is their 90-day notice period, and the profile doesn't explicitly mention experience with evaluation frameworks like NDCG."
-CAND_0078492,74,78.8125,Recommendation Systems Engineer with 5.1 years at Verloop.io; strong in Machine Learning and FAISS.
-CAND_0074225,75,78.7914,Machine Learning Engineer with 4.3 years at Unacademy; strong in Recommendation Systems and Elasticsearch; concern: 120-day notice period.
-CAND_0010149,76,78.4833,ML Engineer with 6.9 years at Glance; strong in Milvus and Vector Search; concern: 90-day notice period.
-CAND_0009024,77,78.4797,"This Search Engineer has 5.2 years of experience with Qdrant, FAISS, PEFT, and LlamaIndex, which are valuable for the role. However, their 46% response rate is a concern, and Python is not explicitly listed."
-CAND_0046132,78,78.3727,AI Research Engineer with 4.3 years at Verloop.io; strong in Information Retrieval and MLOps.
-CAND_0020708,79,78.1618,"This Search Engineer, with 4.2 years of experience, shows strong potential with Sentence Transformers, Milvus, Fine-tuning LLMs, and Learning to Rank, alongside an excellent 84% response rate and 30-day notice. Their experience is slightly under the 5-year minimum, which is an honest concern."
-CAND_0005538,80,78.1363,Senior AI Engineer with 5.9 years at Adobe; strong in Deep Learning and Feature Engineering; concern: 90-day notice period.
-CAND_0096142,81,77.5063,Applied ML Engineer with 5.0 years at upGrad; strong in LoRA and Weaviate; concern: 120-day notice period.
-CAND_0021491,82,77.3776,AI Research Engineer with 6.1 years at Wysa; strong in Recommendation Systems and scikit-learn; concern: 90-day notice period.
-CAND_0007596,83,77.3575,Junior ML Engineer with 4.4 years at Flipkart; strong in scikit-learn and Machine Learning.
-CAND_0093193,84,77.2654,Senior Machine Learning Engineer with 7.9 years at Niramai; strong in Qdrant and OpenSearch.
-CAND_0030468,85,77.1841,Senior Applied Scientist with 5.4 years at Swiggy; strong in TensorFlow and Machine Learning.
-CAND_0019288,86,77.0364,AI Research Engineer with 5.7 years at Paytm; strong in FAISS and TensorFlow.
-CAND_0033445,87,76.9189,ML Engineer with 6.8 years at Vedantu; strong in Deep Learning and Information Retrieval.
-CAND_0010603,88,76.7439,ML Engineer with 5.3 years at BYJU'S; strong in Information Retrieval and OpenSearch; concern: 90-day notice period.
-CAND_0048558,89,76.738,Data Scientist with 6.7 years at Rephrase.ai; strong in Information Retrieval and OpenSearch.
-CAND_0062561,90,76.6628,ML Engineer with 5.9 years at Razorpay; strong in Learning to Rank and Information Retrieval.
-CAND_0096801,91,76.6312,AI Research Engineer with 4.2 years at CRED; strong in Weaviate and Recommendation Systems.
-CAND_0064904,92,76.5922,"This AI Engineer, with 4.9 years of experience, possesses highly relevant skills in Embeddings, LLMs, Weaviate, Vector Search, Python, and MLOps. While their experience is just under the 5-year minimum, their 90-day notice period is a significant concern."
-CAND_0091909,93,76.5644,Machine Learning Engineer with 6.9 years at Rephrase.ai; strong in Pinecone and QLoRA.
-CAND_0033179,94,76.1724,"With 6.9 years as an AI Research Engineer, this candidate offers strong experience in Fine-tuning LLMs, Hugging Face Transformers, MLOps, and Information Retrieval, with a 30-day notice period and 84% response rate."
-CAND_0037980,95,76.0886,Senior Applied Scientist with 9.0 years at Niramai; strong in LoRA and PyTorch.
-CAND_0053695,96,76.0808,"With 5.8 years of experience, this Recommendation Systems Engineer offers valuable skills in Pinecone, pgvector, Embeddings, and Sentence Transformers, crucial for building modern ML systems. Their quick 15-day notice period is a significant advantage, though their 60% response rate is slightly lower."
-CAND_0052682,97,75.9944,"With 6.6 years of experience as an NLP Engineer, this candidate demonstrates excellent fit through their expertise in LLMs, Fine-tuning LLMs, Embeddings, Semantic Search, and FAISS. Their 30-day notice period and 88% response rate are also highly favorable."
-CAND_0066376,98,75.9322,Applied ML Engineer with 5.7 years at Dream11; strong in Recommendation Systems and LoRA; concern: 90-day notice period.
-CAND_0073314,99,75.7545,Senior Software Engineer (ML) with 5.2 years at Aganitha; strong in Feature Engineering and PEFT.
-CAND_0052706,100,75.3188,AI Research Engineer with 5.1 years at Swiggy; strong in MLflow and Pinecone.
+CAND_0018499,1,95.1583,Senior Machine Learning Engineer with 7.2 years at Zomato; strong in Deep Learning and Weaviate.
+CAND_0002025,2,92.3589,"As a Senior AI Engineer with 5.9 years of experience, this candidate is an excellent fit, showcasing expertise in FAISS, Weaviate, Pinecone, Sentence Transformers, Fine-tuning LLMs, and Python. Their 30-day notice period is also ideal."
+CAND_0086022,3,88.2669,Senior Applied Scientist with 5.3 years at Sarvam AI; strong in Vector Search and MLflow.
+CAND_0071974,4,88.0083,Senior AI Engineer with 7.8 years at Netflix; strong in LoRA and Learning to Rank.
+CAND_0081846,5,87.901,Lead AI Engineer with 6.7 years at Razorpay; strong in Information Retrieval and Learning to Rank.
+CAND_0077337,6,87.1134,Staff Machine Learning Engineer with 7.0 years at Paytm; strong in QLoRA and Pinecone.
+CAND_0068811,7,86.6796,"With 8.0 years of experience as an Applied ML Engineer, this candidate is an exceptional fit, showcasing extensive production experience with Vector Search, Qdrant, Embeddings, pgvector, Pinecone, Weaviate, PEFT, and Haystack. A significant concern is their low 42% response rate."
+CAND_0042506,8,86.4482,"This candidate demonstrates strong skills in Milvus, Qdrant, FAISS, Semantic Search, and Fine-tuning LLMs, which are highly relevant to the role. However, their 4.2 years of experience is significantly below the 5-year minimum, and specific evaluation framework experience is not listed."
+CAND_0079387,9,86.0859,AI Engineer with 6.9 years at Microsoft; strong in scikit-learn and Recommendation Systems.
+CAND_0062247,10,85.7793,"This AI Engineer, with 7.3 years of experience, is a strong candidate given their expertise in Pinecone, Qdrant, RAG, Vector Search, Learning to Rank, and Information Retrieval. Their 30-day notice period is also favorable."
+CAND_0000031,11,85.2605,"With 6.0 years of experience as a Recommendation Systems Engineer, this candidate demonstrates strong proficiency in FAISS, Pinecone, Embeddings, and Sentence Transformers, aligning well with the role's technical requirements. An honest concern is the 60-day notice period."
+CAND_0036184,12,84.6132,"This Recommendation Systems Engineer, with 6.0 years of experience, is an excellent fit, demonstrating production experience with Pinecone, FAISS, Sentence Transformers, Embeddings, Vector Search, and Fine-tuning LLMs with QLoRA, all with a 90% response rate and 30-day notice."
+CAND_0065195,13,82.5228,"With 5.1 years of experience as a Search Engineer, this candidate aligns well with the role's needs, demonstrating skills in LLMs, QLoRA, Qdrant, pgvector, Learning to Rank, and LlamaIndex. Their 80% response rate is good, but a 45-day notice period is a minor concern."
+CAND_0046525,14,82.5171,Senior Machine Learning Engineer with 6.1 years at Genpact AI; strong in Elasticsearch and Machine Learning.
+CAND_0050876,15,82.5006,"With 6 years of experience, this Applied ML Engineer is a strong fit, possessing production experience with Qdrant, FAISS, Sentence Transformers, and QLoRA, directly matching core technical requirements. An honest concern is their 90-day notice period, and the profile lacks explicit mention of specific evaluation frameworks like NDCG."
+CAND_0044222,16,82.463,"This AI Engineer brings 7.7 years of experience with strong skills in Qdrant, Weaviate, LlamaIndex, Hugging Face Transformers, and Fine-tuning LLMs (QLoRA), directly aligning with vector database and LLM requirements. An honest concern is their 60-day notice period, and the profile doesn't explicitly detail experience with evaluation frameworks."
+CAND_0064326,17,82.2782,"With 7.6 years of experience as a Search Engineer, this candidate is an excellent fit, showcasing strong skills in Milvus, Weaviate, Semantic Search, RAG, QLoRA, and Python. Their 94% response rate is impressive, though a 45-day notice period is a slight concern."
+CAND_0052328,18,81.789,"With 6.5 years of experience, this candidate has strong skills in Sentence Transformers, Fine-tuning LLMs, QLoRA, and Learning to Rank, making them a good fit for retrieval and ranking systems. A concern is the lack of explicit mention of production experience with specific vector databases like Pinecone or Qdrant."
+CAND_0099806,19,81.7608,AI Engineer with 4.6 years at Mad Street Den; strong in LoRA and RAG.
+CAND_0075574,20,81.5706,Machine Learning Engineer with 5.7 years at Haptik; strong in Hugging Face Transformers and Weaviate.
+CAND_0007009,21,81.2916,"This Recommendation Systems Engineer has 7.9 years of experience, featuring Weaviate, Python, Embeddings, Learning to Rank, LLMs, and Sentence Transformers, making them a very strong technical match. Their 30-day notice period is also a plus."
+CAND_0011687,22,80.6926,"With 7.8 years as a Senior NLP Engineer, this candidate brings strong experience in FAISS, Embeddings, LangChain, Weaviate, and Semantic Search, coupled with an excellent 15-day notice period. They are a strong technical match."
+CAND_0008425,23,80.6707,Senior NLP Engineer with 7.8 years at Ola; strong in Learning to Rank and Qdrant; concern: 90-day notice period.
+CAND_0041610,24,80.5122,"With 6.7 years of experience, this candidate has strong skills in Embeddings, pgvector, and Learning to Rank, which are relevant for retrieval and ranking systems. A concern is the lack of explicit mention of production experience with dedicated vector databases like Pinecone or Qdrant, and specific evaluation frameworks like NDCG."
+CAND_0046064,25,80.3379,"This Senior NLP Engineer has 8.9 years of experience, showcasing strong skills in Pinecone, Haystack, Semantic Search, and QLoRA, directly relevant to vector databases and LLM fine-tuning. A minor concern is the lack of explicit mention of specific evaluation frameworks like MRR or NDCG."
+CAND_0068932,26,80.2929,ML Engineer with 5.2 years at Krutrim; strong in MLOps and Milvus.
+CAND_0027691,27,80.011,NLP Engineer with 6.5 years at Haptik; strong in LoRA and PEFT.
+CAND_0037566,28,79.8559,"With 6.9 years of experience, this Machine Learning Engineer brings strong LLM and fine-tuning expertise (LoRA, QLoRA) and production experience with Pinecone. An honest concern is the lack of explicit mention of specific evaluation frameworks like NDCG or MRR, and direct experience with sentence-transformers."
+CAND_0050454,29,79.6367,"This AI Engineer's 6.8 years of experience includes strong skills in Fine-tuning LLMs (LoRA, QLoRA), FAISS, and Qdrant, directly addressing key requirements for vector databases and LLM expertise. The profile does not explicitly mention experience with embeddings-based retrieval systems like sentence-transformers or specific evaluation frameworks."
+CAND_0088025,30,78.7318,Staff Machine Learning Engineer with 8.6 years at Yellow.ai; strong in Pinecone and QLoRA; concern: 90-day notice period.
+CAND_0018549,31,78.5566,"This candidate offers 6.8 years of experience with production-ready vector databases like Weaviate, Qdrant, and Milvus, alongside expertise in Fine-tuning LLMs and LangChain. A minor concern is their 60-day notice period."
+CAND_0011162,32,78.368,"This Recommendation Systems Engineer has 5.8 years of experience, demonstrating exceptional alignment with FAISS, Milvus, Sentence Transformers, Pinecone, Python, Weaviate, and Embeddings. A significant concern is the 90-day notice period."
+CAND_0014440,33,78.294,"This Recommendation Systems Engineer offers 6.4 years of experience with Milvus, FAISS, Qdrant, and Fine-tuning LLMs, directly addressing key technical requirements. An honest concern is the 60-day notice period."
+CAND_0077285,34,77.5935,Recommendation Systems Engineer with 5.5 years at Nykaa; strong in LoRA and Pinecone.
+CAND_0008295,35,77.3271,"With 6.5 years as an AI Research Engineer, this candidate offers relevant experience in Weaviate, Python, Prompt Engineering, and QLoRA. A minor concern is the 45-day notice period and the absence of explicit embeddings-based retrieval systems."
+CAND_0095619,36,77.1039,NLP Engineer with 15.6 years at Nykaa; strong in Feature Engineering and Pinecone.
+CAND_0055905,37,77.102,Senior Machine Learning Engineer with 8.1 years at Flipkart; strong in Elasticsearch and Hugging Face Transformers; concern: based outside India (UK).
+CAND_0098846,38,76.7295,AI Engineer with 7.6 years at upGrad; strong in Hugging Face Transformers and PEFT.
+CAND_0072660,39,76.5571,Machine Learning Engineer with 7.1 years at Unacademy; strong in Feature Engineering and LoRA; concern: based outside India (Germany).
+CAND_0054100,40,76.5363,Junior ML Engineer with 6.0 years at Zoho; strong in Vector Search and QLoRA.
+CAND_0054394,41,76.5337,Recommendation Systems Engineer with 4.1 years at PharmEasy; strong in MLflow and Fine-tuning LLMs.
+CAND_0017960,42,76.0178,"With 7.7 years of experience as a Recommendation Systems Engineer, this candidate demonstrates strong skills in Qdrant, Python, Information Retrieval, and QLoRA for fine-tuning. An honest concern is their 60-day notice period, which is longer than preferred."
+CAND_0041669,43,75.7101,"This candidate's 8 years of experience is highly relevant, showcasing strong production experience with FAISS, Milvus, Weaviate, Qdrant, Semantic Search, and Information Retrieval. An honest concern is their 60-day notice period, and the profile does not explicitly list experience with specific evaluation frameworks like NDCG."
+CAND_0053591,44,75.5903,"This AI Engineer, with 5.3 years of experience, is a strong match due to their hands-on skills in Embeddings, Sentence Transformers, RAG, Milvus, and Qdrant, directly addressing core requirements for retrieval systems and vector databases. A potential concern is the 60-day notice period."
+CAND_0092255,45,75.5457,ML Engineer with 5.2 years at InMobi; strong in Machine Learning and PyTorch.
+CAND_0026942,46,75.5246,Junior ML Engineer with 6.0 years at Verloop.io; strong in Learning to Rank and TensorFlow.
+CAND_0069905,47,75.264,"This Applied ML Engineer, with 6.6 years of experience, is a strong candidate due to their expertise in Sentence Transformers, LangChain, Hugging Face Transformers, MLOps, Python, Weaviate, and Learning to Rank. Their 90-day notice period is a significant concern for the role."
+CAND_0043860,48,75.1293,"With 6.1 years of experience, this candidate has relevant skills in Qdrant, pgvector, Vector Search, Semantic Search, and Information Retrieval. While their experience is within range, their ""Junior ML Engineer"" title could indicate a different level of past responsibility, and specific evaluation framework experience is not explicitly mentioned."
+CAND_0083879,49,75.1138,Machine Learning Engineer with 7.1 years at Ola; strong in MLOps and Fine-tuning LLMs.
+CAND_0032216,50,75.041,ML Engineer with 6.1 years at upGrad; strong in Learning to Rank and Information Retrieval.
+CAND_0029367,51,74.8997,Senior Data Scientist with 5.7 years at Rephrase.ai; strong in MLflow and TensorFlow; concern: 90-day notice period.
+CAND_0064256,52,74.6322,Junior ML Engineer with 6.4 years at BYJU'S; strong in PyTorch and MLOps.
+CAND_0028422,53,74.5724,Junior ML Engineer with 5.5 years at Yellow.ai; strong in Pinecone and Deep Learning; concern: 90-day notice period.
+CAND_0061257,54,74.4862,Staff Machine Learning Engineer with 8.0 years at LinkedIn; strong in PEFT and Machine Learning.
+CAND_0093912,55,74.2931,Senior Data Scientist with 5.3 years at Razorpay; strong in Feature Engineering and Milvus.
+CAND_0043637,56,74.192,Junior ML Engineer with 5.5 years at Rephrase.ai; strong in PyTorch and Feature Engineering.
+CAND_0004402,57,73.963,"This AI Research Engineer offers 6.0 years of experience, including Qdrant, Sentence Transformers, Fine-tuning LLMs, and Learning to Rank, which aligns well with the role's technical depth. The 60-day notice period is an honest concern."
+CAND_0039754,58,73.8044,Senior Applied Scientist with 16.2 years at Meta; strong in Fine-tuning LLMs and Qdrant.
+CAND_0066690,59,73.7257,ML Engineer with 4.8 years at Freshworks; strong in Hugging Face Transformers and Sentence Transformers.
+CAND_0066999,60,73.6733,"As a Recommendation Systems Engineer with 5.9 years of experience, this candidate is a good fit, bringing skills in FAISS, Pinecone, LLMs, Information Retrieval, and Embeddings. Their 15-day notice period is highly attractive for a founding team."
+CAND_0016659,61,73.6494,ML Engineer with 4.4 years at Glance; strong in Sentence Transformers and Pinecone.
+CAND_0039838,62,73.5325,Recommendation Systems Engineer with 4.9 years at Amazon; strong in MLOps and Embeddings; concern: 90-day notice period.
+CAND_0006418,63,73.5005,"This Machine Learning Engineer, with 5.7 years of experience, demonstrates strong skills in Weaviate, Qdrant, Embeddings, Semantic Search, and Learning to Rank, which are highly relevant. An honest concern is the 60-day notice period."
+CAND_0040887,64,73.3935,"This candidate demonstrates relevant skills in FAISS, Milvus, LoRA, and PEFT, which are valuable for the role. However, their 4.7 years of experience is slightly below the 5-year minimum requirement, and explicit experience with evaluation frameworks is not listed."
+CAND_0006567,65,73.2285,Senior AI Engineer with 7.9 years at Meta; strong in scikit-learn and NLP.
+CAND_0017093,66,73.0789,ML Engineer with 5.9 years at Zoho; strong in Embeddings and Learning to Rank.
+CAND_0076163,67,73.0014,NLP Engineer with 6.9 years at Ola; strong in Weaviate and PyTorch.
+CAND_0009691,68,72.913,"This Applied ML Engineer is an excellent technical fit with 6.2 years of experience, showcasing Pinecone, LangChain, Sentence Transformers, Qdrant, FAISS, and Fine-tuning LLMs. A significant concern is the 120-day notice period."
+CAND_0078002,69,72.5679,Machine Learning Engineer with 6.3 years at Meta; strong in TensorFlow and NLP.
+CAND_0064888,70,72.4362,ML Engineer with 5.8 years at Verloop.io; strong in Embeddings and Learning to Rank.
+CAND_0090155,71,72.2906,ML Engineer with 5.8 years at Swiggy; strong in Milvus and Qdrant; concern: 90-day notice period.
+CAND_0024990,72,72.2714,Junior ML Engineer with 5.2 years at Zoho; strong in MLflow and OpenSearch.
+CAND_0039383,73,72.1461,"This Applied ML Engineer has 7.1 years of experience with strong skills in FAISS, Vector Search, Hugging Face Transformers, and LLM fine-tuning (LoRA, QLoRA). An honest concern is their 90-day notice period, and the profile doesn't explicitly mention experience with evaluation frameworks like NDCG."
+CAND_0078492,74,72.1396,Recommendation Systems Engineer with 5.1 years at Verloop.io; strong in Machine Learning and FAISS.
+CAND_0074225,75,72.1203,Machine Learning Engineer with 4.3 years at Unacademy; strong in Recommendation Systems and Elasticsearch; concern: 120-day notice period.
+CAND_0010149,76,71.8383,ML Engineer with 6.9 years at Glance; strong in Milvus and Vector Search; concern: 90-day notice period.
+CAND_0009024,77,71.835,"This Search Engineer has 5.2 years of experience with Qdrant, FAISS, PEFT, and LlamaIndex, which are valuable for the role. However, their 46% response rate is a concern, and Python is not explicitly listed."
+CAND_0046132,78,71.737,AI Research Engineer with 4.3 years at Verloop.io; strong in Information Retrieval and MLOps.
+CAND_0020708,79,71.544,"This Search Engineer, with 4.2 years of experience, shows strong potential with Sentence Transformers, Milvus, Fine-tuning LLMs, and Learning to Rank, alongside an excellent 84% response rate and 30-day notice. Their experience is slightly under the 5-year minimum, which is an honest concern."
+CAND_0005538,80,71.5206,Senior AI Engineer with 5.9 years at Adobe; strong in Deep Learning and Feature Engineering; concern: 90-day notice period.
+CAND_0096142,81,70.944,Applied ML Engineer with 5.0 years at upGrad; strong in LoRA and Weaviate; concern: 120-day notice period.
+CAND_0021491,82,70.8262,AI Research Engineer with 6.1 years at Wysa; strong in Recommendation Systems and scikit-learn; concern: 90-day notice period.
+CAND_0007596,83,70.8078,Junior ML Engineer with 4.4 years at Flipkart; strong in scikit-learn and Machine Learning.
+CAND_0093193,84,70.7235,Senior Machine Learning Engineer with 7.9 years at Niramai; strong in Qdrant and OpenSearch.
+CAND_0030468,85,70.649,Senior Applied Scientist with 5.4 years at Swiggy; strong in TensorFlow and Machine Learning.
+CAND_0019288,86,70.5139,AI Research Engineer with 5.7 years at Paytm; strong in FAISS and TensorFlow.
+CAND_0033445,87,70.4063,ML Engineer with 6.8 years at Vedantu; strong in Deep Learning and Information Retrieval.
+CAND_0010603,88,70.2461,ML Engineer with 5.3 years at BYJU'S; strong in Information Retrieval and OpenSearch; concern: 90-day notice period.
+CAND_0048558,89,70.2407,Data Scientist with 6.7 years at Rephrase.ai; strong in Information Retrieval and OpenSearch.
+CAND_0062561,90,70.1719,ML Engineer with 5.9 years at Razorpay; strong in Learning to Rank and Information Retrieval.
+CAND_0096801,91,70.1429,AI Research Engineer with 4.2 years at CRED; strong in Weaviate and Recommendation Systems.
+CAND_0064904,92,70.1073,"This AI Engineer, with 4.9 years of experience, possesses highly relevant skills in Embeddings, LLMs, Weaviate, Vector Search, Python, and MLOps. While their experience is just under the 5-year minimum, their 90-day notice period is a significant concern."
+CAND_0091909,93,70.0818,Machine Learning Engineer with 6.9 years at Rephrase.ai; strong in Pinecone and QLoRA.
+CAND_0033179,94,69.723,"With 6.9 years as an AI Research Engineer, this candidate offers strong experience in Fine-tuning LLMs, Hugging Face Transformers, MLOps, and Information Retrieval, with a 30-day notice period and 84% response rate."
+CAND_0037980,95,69.6463,Senior Applied Scientist with 9.0 years at Niramai; strong in LoRA and PyTorch.
+CAND_0053695,96,69.6392,"With 5.8 years of experience, this Recommendation Systems Engineer offers valuable skills in Pinecone, pgvector, Embeddings, and Sentence Transformers, crucial for building modern ML systems. Their quick 15-day notice period is a significant advantage, though their 60% response rate is slightly lower."
+CAND_0052682,97,69.5601,"With 6.6 years of experience as an NLP Engineer, this candidate demonstrates excellent fit through their expertise in LLMs, Fine-tuning LLMs, Embeddings, Semantic Search, and FAISS. Their 30-day notice period and 88% response rate are also highly favorable."
+CAND_0066376,98,69.5031,Applied ML Engineer with 5.7 years at Dream11; strong in Recommendation Systems and LoRA; concern: 90-day notice period.
+CAND_0073314,99,69.3405,Senior Software Engineer (ML) with 5.2 years at Aganitha; strong in Feature Engineering and PEFT.
+CAND_0052706,100,68.9417,AI Research Engineer with 5.1 years at Swiggy; strong in MLflow and Pinecone.

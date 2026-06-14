@@ -258,7 +258,10 @@ def score_candidate_full(cid, full_json):
     elif gh > 20: multiplier *= 1.02
     
     multiplier = max(0.40, min(multiplier, 1.15))
-    return score * multiplier
+    final_score = score * multiplier
+    
+    # Scale from max theoretical (109.25) down to exactly 100.0
+    return (final_score / 109.25) * 100.0
 
 def generate_reasoning(cid, full_json, rank, score, pre_generated):
     if cid in pre_generated:
