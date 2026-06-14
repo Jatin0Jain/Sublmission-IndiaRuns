@@ -250,6 +250,7 @@ def run_ranker(progress=gr.Progress()):
             skills_str = ", ".join(sk.get("name", "") for sk in record.get("skills", []) if sk.get("name"))
             
             scored_candidates.append({
+                "id": cid,
                 "title": p.get("current_title", ""),
                 "experience": p.get("years_of_experience", 0),
                 "skills": skills_str,
@@ -265,7 +266,7 @@ def run_ranker(progress=gr.Progress()):
     for i, c in enumerate(ranked, 1):
         skills_short = ", ".join(c["skills"].split(", ")[:4])
         rows.append(
-            f"**#{i} — {c['title']}** | {c['experience']}y exp | Score: `{c['score']:.3f}`\n"
+            f"**#{i} — {c['title']}** (`{c['id']}`) | {c['experience']}y exp | Score: `{c['score']:.3f}`\n"
             f"> Skills: {skills_short}\n"
             f"> Notice: {c['notice_days']}d | Response: {int(c['response_rate']*100)}% "
             f"| Open to work: {'✅' if c['open_to_work'] else '❌'}\n"
