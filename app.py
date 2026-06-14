@@ -284,9 +284,8 @@ def run_ranker(progress=gr.Progress()):
 with gr.Blocks(title="Redrob Candidate Ranker — Demo", theme=gr.themes.Soft()) as demo:
     gr.Markdown("# 🔍 Redrob Candidate Ranker — Sandbox Demo")
     gr.Markdown(
-        "This demo runs the 100% Rule-Based offline ranking pipeline on the **sample candidates** "
-        "(50 profiles from the challenge bundle). The same pipeline processes all "
-        "100,000 candidates in the final submission in under 10 seconds.\n\n"
+        "This demo runs the 100% Rule-Based offline ranking pipeline on the **full 100,000 candidate dataset** "
+        "from the challenge bundle. It streams and scores the entire dataset live in under 10 seconds.\n\n"
         "**No API calls are made during ranking** — pure algorithmic scoring."
     )
 
