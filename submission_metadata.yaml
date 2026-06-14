@@ -16,7 +16,7 @@ github_repo: "https://github.com/Jatin0Jain/Sublmission-IndiaRuns"
 
 sandbox_link: "https://huggingface.co/spaces/Jatin0Jain/redrob-candidate-ranker"
 
-reproduce_command: "python generate_submission.py --candidates ./candidates.jsonl --out ./submission.csv"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
 compute:
   platform: "Cloud VM"

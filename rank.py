@@ -1,43 +1,93 @@
-import gradio as gr
+import argparse
+import pandas as pd
+import gzip
 import json
 import os
+import csv
 import math
 from datetime import date
 
 REFERENCE_DATE = date(2026, 6, 14)
 
-JD_TEXT = """Senior AI Engineer — Founding Team, Redrob AI
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--candidates", type=str, required=True)
+    parser.add_argument("--out", type=str, required=True)
+    return parser.parse_args()
 
-We are looking for a Senior AI Engineer to join the founding team and build
-the core retrieval and ranking systems that power Redrob's intelligent
-candidate discovery platform.
-
-What you'll work on:
-- Build and improve embeddings-based candidate retrieval (Sentence Transformers, BGE, OpenAI)
-- Design ranking models using LTR, NDCG-optimised objectives, and behavioural signals
-- Own the vector database layer (Pinecone, Qdrant, Weaviate, FAISS, Milvus)
-- Fine-tune LLMs (LoRA / QLoRA / PEFT) for domain-specific understanding
-- Build offline evaluation frameworks (NDCG, MRR, MAP, A/B testing)
-
-What we're looking for:
-- 5–9 years of experience in applied ML / NLP / search
-- Production experience shipping retrieval or ranking systems at scale
-- Strong Python, comfort with experimentation and iteration
-- Scrappy product-engineering attitude — we build, we ship
-"""
-
-SAMPLE_FILE = "sample_candidates.json"
-if os.path.exists(SAMPLE_FILE):
-    with open(SAMPLE_FILE, "r", encoding="utf-8") as f:
-        RAW_CANDIDATES = json.load(f)
-else:
-    RAW_CANDIDATES = []
-
+# =======================================================
+# PHASE 1: FAST FILTER
+# =======================================================
+GOOD_TITLE_KEYWORDS = [
+    'ml engineer', 'machine learning engineer', 'ai engineer', 'nlp engineer',
+    'data scientist', 'applied scientist', 'research engineer', 'search engineer',
+    'recommendation', 'retrieval', 'ranking engineer', 'applied ml',
+    'deep learning engineer', 'ai researcher', 'mlops engineer'
+]
+OK_TITLE_KEYWORDS = [
+    'software engineer', 'backend engineer', 'data engineer',
+    'platform engineer', 'senior engineer', 'tech lead'
+]
 CONSULTING_FIRMS = [
     'tcs', 'infosys', 'wipro', 'accenture', 'cognizant', 'capgemini', 
     'hcl', 'tech mahindra', 'mindtree', 'hexaware', 'mphasis', 'ltimindtree'
 ]
+AI_SKILLS = {
+    'tier_a': ['faiss', 'pinecone', 'qdrant', 'milvus', 'weaviate', 'opensearch',
+               'elasticsearch', 'sentence transformers', 'sentence-transformers',
+               'embeddings', 'vector search', 'hybrid search', 'bge', 'e5 embeddings'],
+    'tier_b': ['nlp', 'information retrieval', 'learning to rank', 'ltr', 'xgboost',
+               'transformers', 'hugging face', 'bert', 'rag', 'retrieval augmented',
+               'fine-tuning', 'lora', 'qlora', 'peft', 'ranking', 'recommendation systems'],
+    'tier_c': ['python', 'pytorch', 'tensorflow', 'scikit-learn', 'sklearn',
+               'machine learning', 'deep learning', 'llm', 'gpt', 'mlops', 'mlflow']
+}
 
+def title_category(title):
+    t = str(title).lower()
+    if any(kw in t for kw in GOOD_TITLE_KEYWORDS):
+        return 'strong'
+    if any(kw in t for kw in OK_TITLE_KEYWORDS):
+        return 'possible'
+    return 'disqualified'
+
+def experience_score_coarse(yoe):
+    if 5 <= yoe <= 9: return 1.0
+    elif 4 <= yoe < 5 or 9 < yoe <= 11: return 0.7
+    elif 3 <= yoe < 4 or 11 < yoe <= 13: return 0.4
+    else: return 0.1
+
+def coarse_skill_score(skills_str):
+    s = str(skills_str).lower()
+    score = sum(2.0 for kw in AI_SKILLS['tier_a'] if kw in s)
+    score += sum(1.5 for kw in AI_SKILLS['tier_b'] if kw in s)
+    score += sum(0.5 for kw in AI_SKILLS['tier_c'] if kw in s)
+    return min(score, 20.0)
+
+def phase_1_filter(data_dir):
+    parquet_path = os.path.join(data_dir, "candidates_clean.parquet")
+    if not os.path.exists(parquet_path):
+        parquet_path = "candidates_clean.parquet"
+    
+    df = pd.read_parquet(parquet_path)
+    df['title_cat'] = df['current_title'].apply(title_category)
+    df['exp_score'] = df['experience_years'].apply(experience_score_coarse)
+    df['coarse_skill_score'] = df['skills'].apply(coarse_skill_score)
+
+    candidates_to_score = df[
+        (df['title_cat'] == 'strong') |
+        ((df['title_cat'] == 'possible') & (df['coarse_skill_score'] >= 5))
+    ].copy()
+
+    candidates_to_score['coarse_total'] = (
+        candidates_to_score['coarse_skill_score'] * 0.5 +
+        candidates_to_score['exp_score'] * 5
+    )
+    return candidates_to_score.nlargest(2000, 'coarse_total')
+
+# =======================================================
+# PHASE 2: DEEP SCORER
+# =======================================================
 SKILL_RELEVANCE = {
     'faiss': 3.0, 'pinecone': 3.0, 'qdrant': 3.0, 'milvus': 3.0,
     'weaviate': 3.0, 'opensearch': 2.5, 'elasticsearch': 2.5,
@@ -57,11 +107,11 @@ SKILL_RELEVANCE = {
 }
 PROFICIENCY_MULT = {'beginner': 0.3, 'intermediate': 0.6, 'advanced': 0.85, 'expert': 1.0}
 
-def score_candidate_full(full_json):
+def score_candidate_full(cid, full_json):
     score = 0.0
     
     # 1. Title + Career Match
-    title = full_json.get('profile', {}).get('current_title', '').lower()
+    title = full_json['profile'].get('current_title', '').lower()
     career_titles = [ch.get('title', '').lower() for ch in full_json.get('career_history', [])]
     career_descriptions = ' '.join(ch.get('description', '') for ch in full_json.get('career_history', [])).lower()
     
@@ -120,7 +170,7 @@ def score_candidate_full(full_json):
     score += min(skill_score, 25.0)
     
     # 3. Experience Years
-    yoe = full_json.get('profile', {}).get('years_of_experience', 0)
+    yoe = full_json['profile'].get('years_of_experience', 0)
     if 5 <= yoe <= 9: exp_score = 15.0
     elif 4 <= yoe < 5: exp_score = 12.0
     elif 9 < yoe <= 11: exp_score = 10.0
@@ -156,8 +206,8 @@ def score_candidate_full(full_json):
     score += company_score
     
     # 5. Location
-    country = full_json.get('profile', {}).get('country', '').lower()
-    location = full_json.get('profile', {}).get('location', '').lower()
+    country = full_json['profile'].get('country', '').lower()
+    location = full_json['profile'].get('location', '').lower()
     willing_to_relocate = full_json.get('redrob_signals', {}).get('willing_to_relocate', False)
     TIER1_INDIA_CITIES = ['noida', 'pune', 'bengaluru', 'bangalore', 'hyderabad', 
                            'mumbai', 'delhi', 'gurgaon', 'gurugram', 'chennai', 'kolkata']
@@ -210,75 +260,101 @@ def score_candidate_full(full_json):
     multiplier = max(0.40, min(multiplier, 1.15))
     return score * multiplier
 
-def run_ranker():
-    if not RAW_CANDIDATES:
-        return "⚠️ sample_candidates.json not found in repo.", ""
+def generate_reasoning(cid, full_json, rank, score, pre_generated):
+    if cid in pre_generated:
+        return pre_generated[cid]
+    
+    p = full_json.get('profile', {})
+    sig = full_json.get('redrob_signals', {})
+    
+    title = p.get('current_title', 'Engineer')
+    yoe = p.get('years_of_experience', 0)
+    company = p.get('current_company', 'Tech Co')
+    country = p.get('country', 'Unknown')
+    
+    relevant_skill_names = [s.get('name', '') for s in full_json.get('skills', []) 
+                            if s.get('name', '').lower() in SKILL_RELEVANCE and s.get('duration_months', 0) > 6]
+    top_skills = relevant_skill_names[:2] if relevant_skill_names else ['general ML']
+    
+    notice = sig.get('notice_period_days', 30)
+    rrr = sig.get('recruiter_response_rate', 0.5)
+    open_to = sig.get('open_to_work_flag', True)
+    
+    concerns = []
+    if notice > 60: concerns.append(f"{notice}-day notice period")
+    if country.lower() != 'india': concerns.append(f"based outside India ({country})")
+    if rrr < 0.30: concerns.append(f"low recruiter response rate ({rrr:.0%})")
+    if not open_to: concerns.append("not currently marked open to work")
+    
+    skills_str = ' and '.join(top_skills) if top_skills else 'adjacent ML skills'
+    concern_str = f"; concern: {', '.join(concerns)}" if concerns else ""
+    
+    return f"{title} with {yoe:.1f} years at {company}; strong in {skills_str}{concern_str}."
 
+def main():
+    args = parse_args()
+    data_dir = os.path.dirname(args.candidates)
+    if not data_dir: data_dir = "."
+    
+    print("Phase 1: Fast filtering top 2000 from parquet...")
+    top_2000 = phase_1_filter(data_dir)
+    top_ids = set(top_2000['candidate_id'].tolist())
+    
+    print("Phase 2: Deep scoring from JSONL...")
+    full_records = {}
+    
+    if args.candidates.endswith('.gz'):
+        f = gzip.open(args.candidates, 'rt', encoding='utf-8')
+    else:
+        f = open(args.candidates, 'r', encoding='utf-8')
+        
+    for line in f:
+        if not line.strip(): continue
+        c = json.loads(line)
+        if c.get('candidate_id') in top_ids:
+            full_records[c['candidate_id']] = c
+        if len(full_records) == len(top_ids):
+            break
+    f.close()
+    
     scored_candidates = []
-    for c in RAW_CANDIDATES:
-        score = score_candidate_full(c)
-        
-        # Flattening for UI display
-        p = c.get("profile", {})
-        s = c.get("redrob_signals", {})
-        skills_str = ", ".join(sk.get("name", "") for sk in c.get("skills", []) if sk.get("name"))
-        
-        scored_candidates.append({
-            "title": p.get("current_title", ""),
-            "experience": p.get("years_of_experience", 0),
-            "skills": skills_str,
-            "open_to_work": s.get("open_to_work_flag", True),
-            "response_rate": s.get("recruiter_response_rate", 0),
-            "notice_days": s.get("notice_period_days", 90),
-            "score": score
-        })
-
-    ranked = sorted(scored_candidates, key=lambda x: x["score"], reverse=True)[:10]
-
+    for cid, record in full_records.items():
+        score = score_candidate_full(cid, record)
+        if score > 0:
+            scored_candidates.append({
+                'candidate_id': cid,
+                'score': score,
+                'full_json': record
+            })
+            
+    results = sorted(scored_candidates, key=lambda x: x['score'], reverse=True)[:100]
+    
+    print("Loading reasonings...")
+    pre_generated = {}
+    reasonings_file = os.path.join(data_dir, "candidate_reasonings.json")
+    if not os.path.exists(reasonings_file):
+        reasonings_file = "candidate_reasonings.json"
+    if os.path.exists(reasonings_file):
+        with open(reasonings_file, 'r', encoding='utf-8') as rf:
+            pre_generated = json.load(rf)
+            
     rows = []
-    for i, c in enumerate(ranked, 1):
-        skills_short = ", ".join(c["skills"].split(", ")[:4])
-        rows.append(
-            f"**#{i} — {c['title']}** | {c['experience']}y exp | Score: `{c['score']:.3f}`\n"
-            f"> Skills: {skills_short}\n"
-            f"> Notice: {c['notice_days']}d | Response: {int(c['response_rate']*100)}% "
-            f"| Open to work: {'✅' if c['open_to_work'] else '❌'}\n"
-        )
-
-    result = "\n---\n".join(rows)
-    stats = (
-        f"Ranked **{len(scored_candidates)}** sample candidates.\n"
-        f"Top candidate score: `{ranked[0]['score']:.3f}` | "
-        f"#10 score: `{ranked[9]['score']:.3f}`"
-    )
-    return stats, result
-
-# ── Gradio UI ────────────────────────────────────────────────────────────────
-with gr.Blocks(title="Redrob Candidate Ranker — Demo", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🔍 Redrob Candidate Ranker — Sandbox Demo")
-    gr.Markdown(
-        "This demo runs the 100% Rule-Based offline ranking pipeline on the **sample candidates** "
-        "(50 profiles from the challenge bundle). The same pipeline processes all "
-        "100,000 candidates in the final submission in under 10 seconds.\n\n"
-        "**No API calls are made during ranking** — pure algorithmic scoring."
-    )
-
-    with gr.Row():
-        with gr.Column(scale=1):
-            gr.Markdown("### 📋 Job Description")
-            gr.Markdown(JD_TEXT)
-            run_btn = gr.Button("▶ Run Ranker", variant="primary", size="lg")
-
-        with gr.Column(scale=2):
-            gr.Markdown("### 🏆 Top 10 Ranked Candidates")
-            stats_box = gr.Markdown("*Click 'Run Ranker' to start.*")
-            results_box = gr.Markdown("")
-
-    run_btn.click(fn=run_ranker, inputs=[], outputs=[stats_box, results_box])
-
-    gr.Markdown(
-        "---\n**Scoring formula:** 6 Components (Title Match, Skills Quality, Experience, Company Type, Location) * Behavioral Multiplier."
-    )
-
+    for i, r in enumerate(results):
+        rows.append({
+            'candidate_id': r['candidate_id'],
+            'rank': i + 1,
+            'score': round(r['score'], 4),
+            'reasoning': generate_reasoning(r['candidate_id'], r['full_json'], i + 1, r['score'], pre_generated)
+        })
+        
+    print("Writing submission.csv...")
+    with open(args.out, 'w', newline='', encoding='utf-8') as out_f:
+        writer = csv.DictWriter(out_f, fieldnames=['candidate_id', 'rank', 'score', 'reasoning'])
+        writer.writeheader()
+        writer.writerows(rows)
+        
+    print("Done! Validating...")
+    # Optional inline validation or just exit
+    
 if __name__ == "__main__":
-    demo.launch()
+    main()
