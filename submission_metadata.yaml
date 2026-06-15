@@ -3,20 +3,26 @@
 team_name: "Antigravity"  
 
 primary_contact:
-  name: "User"
-  email: "user@example.com"
-  phone: "+91-0000000000"        
+  name: "Jatin Jain"                  
+  email: "jatin137137@gmail.com"      
+  phone: "+91-7027675453"            
 
 team_members:
-  - name: "User"
-    email: "user@example.com"
+  - name: "Jatin Jain"                 
+    email: "jatin137137@gmail.com"      
     role: "Lead"
 
-github_repo: "https://github.com/Jatin0Jain/Sublmission-IndiaRuns"
+github_repo: "https://github.com/Jatin0Jain/Submission-IndiaRuns"
 
 sandbox_link: "https://huggingface.co/spaces/Jatin0Jain/redrob-candidate-ranker"
 
-reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+reproduce_command: |
+  # Step 1: Pre-compute (one-time, ~15 min)
+  python prep_data.py --data-dir ./data
+  python prep_embeddings.py --data-dir ./data
+  python prep_reasonings.py --data-dir ./data
+  # Step 2: Generate submission (offline, ~10 sec)
+  python rank.py --candidates ./data/candidates.jsonl --out ./team_submission.csv
 
 compute:
   platform: "Cloud VM"

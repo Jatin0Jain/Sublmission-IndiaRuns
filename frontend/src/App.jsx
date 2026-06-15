@@ -5,7 +5,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 
 import './index.css';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = '/api';
 
 function App() {
   const [jdText, setJdText] = useState("We are looking for a Senior Backend Engineer with deep expertise in Python, FastAPI, and Postgres. You should have experience with Docker and AWS. 5+ years of experience required.");

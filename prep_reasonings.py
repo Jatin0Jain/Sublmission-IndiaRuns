@@ -70,13 +70,19 @@ def main():
     
     df["semantic_score"] = similarities
     df = df[df["is_honeypot"] == 0].copy()
+    # Ensure last_active is a datetime regardless of whether parquet stored it
+    # as a string or a timestamp — prevents silent fallback in calculate_behavioral_score.
+    df["last_active"] = pd.to_datetime(df["last_active"], errors="coerce").fillna(
+        pd.Timestamp.now() - pd.DateOffset(years=2)
+    )
     df["behavioral_score"] = df.apply(calculate_behavioral_score, axis=1)
     df["final_score"] = (df["semantic_score"] * 0.7) + (df["behavioral_score"] * 0.3)
     
-    # Take top 100 for the final submission
-    top_candidates = df.sort_values(by="final_score", ascending=False).head(100).copy()
+    # Take top 300 so we have coverage regardless of which scoring system
+    # (semantic vs rule-based) selects the final top 100 during rank.py
+    top_candidates = df.sort_values(by="final_score", ascending=False).head(300).copy()
     
-    print("Generating LLM reasonings in batches of 20...", flush=True)
+    print(f"Generating LLM reasonings for top {len(top_candidates)} candidates in batches of 20...", flush=True)
     reasonings_dict = {}
     batch_size = 20
     candidates_list = top_candidates.to_dict('records')

@@ -11,9 +11,13 @@ __pycache__/
 venv/
 .venv/
 
-# node
-node_modules/
-dist/
+# node (use ** to catch nested dirs like frontend/node_modules/)
+**/node_modules/
+**/dist/
+
+# api.py upload endpoint temp files
+temp_dataset*
+temp_embeddings.npy
 
 # OS
 .DS_Store

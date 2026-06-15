@@ -26,11 +26,14 @@ app.add_middleware(
 )
 
 # Load FAISS Index
-DATA_DIR = os.path.join(
+# DATA_DIR can be overridden via the DATA_DIR environment variable.
+# Falls back to the default competition bundle layout if not set.
+_default_data_dir = os.path.join(
     os.path.dirname(__file__),
     "[PUB] India_runs_data_and_ai_challenge",
     "India_runs_data_and_ai_challenge",
 )
+DATA_DIR = os.environ.get("DATA_DIR", _default_data_dir)
 EMBEDDINGS_PATH = os.path.join(DATA_DIR, "candidate_embeddings.npy")
 CANDIDATES_PATH = os.path.join(DATA_DIR, "candidates_clean.parquet")
 
